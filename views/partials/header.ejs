@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelp Camp</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/stylesheets/main.css">
+	</head>
+	<body>
+		<!-- navbar setup -->
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Yelp Camp</a>
+				</div>
+				<!-- <div class="collapse navbar-collapse"> nav navbar-nav navbar-right-->
+					<ul class="nav justify-content-end">
+						<%if(!currentUser){%>
+							<li class="nav-item">
+								<a class="nav-link active" href="/login">Login</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/register">Sign Up</a>
+							</li>
+						<%}else{%>
+							<li class="nav-item">
+								<a class="nav-link">Signed In As <%=currentUser.username%></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/logout">Log Out</a>
+							</li>
+						<%}%>
+					</ul>
+				<!-- </div> -->
+			</div>
+		</nav>
+		<div class="container">
+			<%if(error && error.length>0){%>
+				<div class="alert alert-danger" role="alert">
+					<%=error%>
+				</div>
+			<%}%>
+			<%if(success && success.length>0){%>
+				<div class="alert alert-success" role="alert">
+					<%=success%>
+				</div>
+			<%}%>
+		</div>
+		
+		
+			
+		
+		
